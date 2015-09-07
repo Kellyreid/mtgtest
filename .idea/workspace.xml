@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae96b5ee-de71-4896-af92-89f9ae6d579d" name="Default" comment="" />
+    <list default="true" id="ae96b5ee-de71-4896-af92-89f9ae6d579d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/metacards/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/metacards/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="mtgtest.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,7 +59,7 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/metacards/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="21" selection-start="556" selection-end="577" vertical-scroll-proportion="0.15805022" vertical-offset="208" max-vertical-offset="900">
+            <state line="21" column="2" selection-start="558" selection-end="558" vertical-scroll-proportion="0.15805022" vertical-offset="208" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
@@ -413,7 +416,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/metacards/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="21" selection-start="556" selection-end="577" vertical-scroll-proportion="0.15805022" vertical-offset="208" max-vertical-offset="900">
+        <state line="21" column="2" selection-start="558" selection-end="558" vertical-scroll-proportion="0.15805022" vertical-offset="208" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
