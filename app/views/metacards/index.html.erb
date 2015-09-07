@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Metacards</h1>
+
+<table id='metacards'>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rules text</th>
+      <th>Mana cost</th>
+      <th>Converted mana cost</th>
+      <th>Power</th>
+      <th>Toughness</th>
+      <th>Loyalty</th>
+      <th>Type line</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @metacards.each do |metacard| %>
+      <tr>
+        <td><%= metacard.name %></td>
+        <td><%= metacard.rules_text %></td>
+        <td><%= metacard.mana_cost %></td>
+        <td><%= metacard.converted_mana_cost %></td>
+        <td><%= metacard.power %></td>
+        <td><%= metacard.toughness %></td>
+        <td><%= metacard.loyalty %></td>
+        <td><%= metacard.type_line %></td>
+        <td><%= link_to 'Show', metacard, :class=>'btn btn-primary' %></td>
+        <td><%= link_to 'Edit' , edit_metacard_path(metacard), :class=>'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy' , metacard, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Metacard', new_metacard_path %>
+<script>
+$('#metacards').DataTable();
+
+$('#metacards').addClass('row-border compact middle-text');
+    $('#metacards').dataTable(
+		{
+			jqueryui: true,
+			pageLength: 10,
+			responsive: true,
+
+		});
+</script>

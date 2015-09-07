@@ -1,0 +1,2 @@
+module MetacardsHelper
+end

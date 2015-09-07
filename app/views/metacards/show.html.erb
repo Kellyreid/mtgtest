@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @metacard.name %>
+</p>
+
+<p>
+  <strong>Rules text:</strong>
+  <%= @metacard.rules_text %>
+</p>
+
+<p>
+  <strong>Mana cost:</strong>
+  <%= @metacard.mana_cost %>
+</p>
+
+<p>
+  <strong>Converted mana cost:</strong>
+  <%= @metacard.converted_mana_cost %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @metacard.power %>
+</p>
+
+<p>
+  <strong>Toughness:</strong>
+  <%= @metacard.toughness %>
+</p>
+
+<p>
+  <strong>Loyalty:</strong>
+  <%= @metacard.loyalty %>
+</p>
+
+<p>
+  <strong>Type line:</strong>
+  <%= @metacard.type_line %>
+</p>
+
+<%= link_to 'Edit', edit_metacard_path(@metacard) %> |
+<%= link_to 'Back', metacards_path %>
