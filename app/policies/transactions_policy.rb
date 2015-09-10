@@ -7,18 +7,18 @@ class TransactionsPolicy
   end
 
   def update?
-    user.admin? or  transaction.has_user_id(@user:user_id)
+    user.admin? or  @transactions.user_id==@user.user_id
   end
 
   def show?
-    user.admin? or  transaction.has_user_id(@user:user_id)
+    user.admin? or  @transactions.user_id==@user.user_id
   end
   def index?
-    user.admin? or  transaction.has_user_id(@user:user_id)
+    user.admin? or  @transactions.user_id==@user.user_id
   end
 
   def destroy?
-    user.admin? or  transaction.has_user_id(@user:user_id)
+    user.admin? or  @transactions.user_id==@user.user_id
   end
 
   def edit?
@@ -26,7 +26,7 @@ class TransactionsPolicy
   end
 
   def create?
-    user.admin? or  transaction.has_user_id(@user:user_id)
+    user.admin? or  @transactions.user_id==@user.user_id
   end
 
   def new?
