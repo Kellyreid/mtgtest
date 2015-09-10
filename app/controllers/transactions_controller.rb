@@ -5,14 +5,13 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.where(:user_id==current_user.id)
+    @transactions = Transaction.where(:user_id => current_user.id)
   end
 
   # GET /transactions/1
   # GET /transactions/1.json
   def show
-
-    @transactions = Transaction.where(:user_id==current_user.id)
+    @transactions = Transaction.where(:user_id => current_user.id)
   end
 
   # GET /transactions/new
@@ -22,6 +21,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/1/edit
   def edit
+    @transactions = Transaction.where(:user_id => current_user.id)
   end
 
   # POST /transactions
