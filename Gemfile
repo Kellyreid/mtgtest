@@ -33,16 +33,27 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
+
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-generators', '~> 3.3.4'
+
 gem 'autoprefixer-rails'
 
 gem 'omniauth-facebook', '~> 1.4.1'
 gem 'chartkick', '~> 1.4.0'
 gem 'jquery-datatables-rails', '~> 3.3.0'
 
+gem 'jquery-tablesorter', '~> 1.17.4'
+gem 'jazz_fingers', '~> 0.5.2'
+gem 'faraday'
+gem 'ransack'
+gem 'pundit'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
 end
 
 group :development do

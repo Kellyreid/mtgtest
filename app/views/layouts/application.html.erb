@@ -1,26 +1,107 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
 <html>
 <head>
-  <title>MTG Test</title>
+  <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+<style>
+.cardThumb{
+max-height:75px;
+}
+.imgThumbMed{
+
+
+}
+<style>
+.cardMedium{
+max-height:150px;
+}
+
+</style>
+
+</style>
 <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand" ><%= link_to :'QS Pro', '/' %></span>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+
+
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <i class="fa fa-fw fa-dashboard"></i><%= link_to :Cards,'/metacards' %>
+                    </li>
+                    <li>
+                        <i class="fa fa-fw fa-bar-chart-o"></i><%= link_to :Transactions,'/transactions' %>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> TITLE</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Dropdown Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <% if current_user %>
+                      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                      <% else %>
+                        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                      <% end %>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
 <div id="main-container" class="container">
 <div class='material-2' style='text-align:right;'>
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+  nothing here right now
 </div>
 <hr>
 <%= yield %>
 
 
 </div>
-
+<div class='footer'>
+    <div class='col-lg-4 col-md-4 col-sm-4  col-xs-12'>
+    <h3>Thing 1</h3>
+    <%= current_user.id %>
+    </div>
+    <div class='col-lg-4 col-md-4 col-sm-4  col-xs-12'>
+    <h3>Thing 2</h3>
+    </div>
+    <div class='col-lg-4 col-md-4 col-sm-4  col-xs-12'>
+    <h3>Thing 3</h3>
+    </div>
+</div>
 </body>
 </html>

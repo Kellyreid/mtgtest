@@ -1,12 +1,32 @@
 Rails.application.routes.draw do
-  resources :metacards
+  resources :index_pages
+  resources :decks
+  # get 'users/new'
+  # get 'users#index'
+  # get 'users/create'
+
+  resources :transactions
+  resources :transactions
+  resources :transactions
+  resources :metacards do
+    collection do
+      get '/by_name/:name', action: 'by_name', as: 'metacard_by_name'
+    end
+  end
+
+  resources :users
+  resource :index_pages
+
   get 'sessions/create'
 
   get 'sessions/destroy'
 
   get 'home/show'
 
-  root 'metacards#index'
+  # get 'users/:user'
+
+  root 'transactions#index'
+
 get 'auth/:provider/callback' => 'sessions#create'
  get 'auth/failure' => redirect('/')
  get 'signout' => 'sessions#destroy', as: 'signout'

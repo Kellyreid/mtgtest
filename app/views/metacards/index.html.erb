@@ -1,18 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Metacards</h1>
+<h1>Listing Cards</h1>
+
+<div class='well'>These are gameplay objects, not assets.  They are keyed by an English card name</div>
+<%= link_to 'Add New Card', new_metacard_path, :class=>'btn btn-success' %>
 
 <table id='metacards'>
   <thead>
     <tr>
+        <th>&nbsp</th>
       <th>Name</th>
       <th>Rules text</th>
       <th>Mana cost</th>
-      <th>Converted mana cost</th>
+      <th>CMC</th>
       <th>Power</th>
-      <th>Toughness</th>
+      <th>Tgh</th>
       <th>Loyalty</th>
-      <th>Type line</th>
+      <th>Types</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +24,9 @@
   <tbody>
     <% @metacards.each do |metacard| %>
       <tr>
+         <td>
+        <%= link_to(image_tag("http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=#{metacard.name}", :alt => "#{metacard.name}", :title => "#{metacard.name}", :class=>"cardThumb"), metacard) %>
+         <!--<img class="cardMedium" src="http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=<%= metacard.name   %>"></td>-->
         <td><%= metacard.name %></td>
         <td><%= metacard.rules_text %></td>
         <td><%= metacard.mana_cost %></td>
@@ -38,7 +45,7 @@
 
 <br>
 
-<%= link_to 'New Metacard', new_metacard_path %>
+<%= link_to 'New Metacard', new_metacard_path, :class=>'btn btn-success' %>
 <script>
 $('#metacards').DataTable();
 

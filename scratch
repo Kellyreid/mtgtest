@@ -1,0 +1,12 @@
+transaction partner:string asset_id:integer volume:integer channel:string notes:text type:string partner_trade_id:integer
+
+who-partner     #the merchant or the buyer or the trader
+what-assetid,vol#the asset(s) transacted
+where-channel   #tcgplayer, mtgpark, etc
+when-created_on #updated_on auto
+why-notes       #freeform notes.
+how-partner_
+    trade_id    #partner
+
+
+

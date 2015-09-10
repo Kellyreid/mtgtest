@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Partner:</strong>
+  <%= @transaction.partner %>
+</p>
+
+<p>
+  <strong>Asset:</strong>
+  <%= @transaction.asset_id %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @transaction.volume %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @transaction.price %>
+</p>
+
+<p>
+  <strong>Channel:</strong>
+  <%= @transaction.channel %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @transaction.notes %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @transaction.type %>
+</p>
+
+<p>
+  <strong>Partner trade:</strong>
+  <%= @transaction.partner_trade_id %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @transaction.currency %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

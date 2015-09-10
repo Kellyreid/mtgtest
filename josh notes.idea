@@ -1,0 +1,11 @@
+mailcatcher - sandbox gem
+actionmailer (built in)
+jazzhands - better console (installed)
+
+# mtg price api format
+
+http://magic-hoover.herokuapp.com
+    /<%= api.version %>
+    /<%= object.type =>
+    /object.name %>  # drgon guy, set Name, etc
+    /<%= object.property %>.json   #prices, cards,etc

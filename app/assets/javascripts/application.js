@@ -19,5 +19,16 @@
 //= require dataTables/jquery.dataTables
 //= require turbolinks
 //= require bootstrap-sprockets
+
+
+//= require jquery-tablesorter/jquery.tablesorter
+//= require jquery-tablesorter/jquery.tablesorter.widgets
+//= require jquery-tablesorter/addons/pager/jquery.tablesorter.pager
+//= require jquery-tablesorter/widgets/widget-repeatheaders
+//= require jquery-tablesorter/parsers/parser-metric
+//= require jquery.quicksearch
+
+
+
 //= require_tree .
 

@@ -61,6 +61,14 @@ class MetacardsController < ApplicationController
     end
   end
 
+  def by_name
+    name = params[:name]
+    @metacard = Metacard.find_by(name: name)
+    respond_to do |format|
+      format.html { render :show }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_metacard
@@ -69,6 +77,6 @@ class MetacardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def metacard_params
-      params.require(:metacard).permit(:name, :rules_text, :mana_cost, :converted_mana_cost, :power, :toughness, :loyalty, :type_line)
+      params.require(:metacard).permit(:name, :rules_text, :mana_cost, :converted_mana_cost, :power, :toughness, :loyalty, :type_line, :notes)
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150907082352) do
+ActiveRecord::Schema.define(version: 20150910002800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,22 @@ ActiveRecord::Schema.define(version: 20150907082352) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "mana_cost"
+  end
+
+  create_table "decks", force: :cascade do |t|
+    t.string   "title"
+    t.string   "type"
+    t.text     "notes"
+    t.string   "format"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "index_pages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "metacards", force: :cascade do |t|
@@ -34,6 +50,23 @@ ActiveRecord::Schema.define(version: 20150907082352) do
     t.string   "type_line"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.text     "notes"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string   "partner"
+    t.string   "asset_id"
+    t.integer  "volume"
+    t.decimal  "price"
+    t.string   "channel"
+    t.text     "notes"
+    t.string   "type"
+    t.integer  "partner_trade_id"
+    t.string   "currency"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "owner_id"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
