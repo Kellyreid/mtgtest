@@ -19,6 +19,7 @@ class MetacardsController < ApplicationController
 
   # GET /metacards/1/edit
   def edit
+
   end
 
   # POST /metacards

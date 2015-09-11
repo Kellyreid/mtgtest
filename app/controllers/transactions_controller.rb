@@ -5,13 +5,18 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.where(:user_id => current_user.id)
+    if current_user
+      @transactions = Transaction.where(:user_id => current_user.id)
+    else
+      redirect_to Metacard, notice: 'log in to create and view your transactions'
+    end
+    #@transactions = Transaction.new(transaction_params)
   end
 
   # GET /transactions/1
   # GET /transactions/1.json
   def show
-    @transactions = current_user.transactions.all
+    #@transactions = current_user.transactions.all
   end
 
   # GET /transactions/new
@@ -21,7 +26,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/1/edit
   def edit
-    @transactions = Transaction.where(:user_id => current_user.id)
+    #@transactions = Transaction.where(:user_id => current_user.id)
   end
 
   # POST /transactions
@@ -67,7 +72,7 @@ class TransactionsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_transaction
-      @transaction = Transaction.find(params[:id])
+      @transaction = current_user.transactions.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
