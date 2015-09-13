@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910002800) do
+ActiveRecord::Schema.define(version: 20150913013614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amember_user_subscriptions", force: :cascade do |t|
+    t.integer  "amember_user_id"
+    t.integer  "user_id"
+    t.integer  "amember_plan_id"
+    t.string   "plan_expire_date"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "amember_user_subscriptions", ["user_id"], name: "index_amember_user_subscriptions_on_user_id", using: :btree
 
   create_table "cards", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +64,16 @@ ActiveRecord::Schema.define(version: 20150910002800) do
     t.text     "notes"
   end
 
+  create_table "testthings", force: :cascade do |t|
+    t.string   "name"
+    t.text     "note"
+    t.integer  "metacard_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "testthings", ["metacard_id"], name: "index_testthings_on_metacard_id", using: :btree
+
   create_table "transactions", force: :cascade do |t|
     t.string   "partner"
     t.string   "asset_id"
@@ -79,4 +100,6 @@ ActiveRecord::Schema.define(version: 20150910002800) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "amember_user_subscriptions", "users"
+  add_foreign_key "testthings", "metacards"
 end

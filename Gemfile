@@ -41,15 +41,19 @@ gem 'bootstrap-generators', '~> 3.3.4'
 
 gem 'autoprefixer-rails'
 
-gem 'omniauth-facebook', '~> 1.4.1'
+gem 'omniauth-facebook', '~> 1.4.1' #what we use to log people in
+gem 'amember_pro'
+
 gem 'chartkick', '~> 1.4.0'
-gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'jquery-datatables-rails', '~> 3.3.0' #makes our tables pretty
 
 gem 'jquery-tablesorter', '~> 1.17.4'
 gem 'jazz_fingers', '~> 0.5.2'
-gem 'faraday'
+gem 'faraday' #using this to consume Hoover API
 gem 'ransack'
 gem 'pundit'
+gem "bullet", :group => "development"
+gem 'factory_girl_rails', '~> 4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

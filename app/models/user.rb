@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
 has_many :transactions
+has_many :amember_user_subscriptions
 
  def self.from_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

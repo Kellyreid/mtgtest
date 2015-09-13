@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :index_pages
   resources :decks
   # get 'users/new'
@@ -6,16 +8,16 @@ Rails.application.routes.draw do
   # get 'users/create'
 
   resources :transactions
-  resources :transactions
-  resources :transactions
+  resources :users
+  resource :index_pages
   resources :metacards do
     collection do
       get '/by_name/:name', action: 'by_name', as: 'metacard_by_name'
     end
   end
 
-  resources :users
-  resource :index_pages
+
+
 
   get 'sessions/create'
 
@@ -25,7 +27,7 @@ Rails.application.routes.draw do
 
   # get 'users/:user'
 
-  root 'transactions#index'
+  root 'welcome#index'
 
 get 'auth/:provider/callback' => 'sessions#create'
  get 'auth/failure' => redirect('/')

@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    amember_pro (0.2.0)
+      faraday
     arel (6.0.3)
     autoprefixer-rails (6.0.1)
       execjs
@@ -48,6 +50,9 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
+    bullet (4.14.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.9.0)
     byebug (3.5.1)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
@@ -70,6 +75,11 @@ GEM
     diffy (3.0.7)
     erubis (2.7.0)
     execjs (2.6.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     globalid (0.3.6)
@@ -226,6 +236,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     unicode_utils (1.4.0)
+    uniform_notifier (1.9.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -237,11 +248,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amember_pro
   autoprefixer-rails
   bootstrap-generators (~> 3.3.4)
   bootstrap-sass (~> 3.2.0)
+  bullet
   chartkick (~> 1.4.0)
   coffee-rails (~> 4.1.0)
+  factory_girl_rails (~> 4.0)
   faraday
   jazz_fingers (~> 0.5.2)
   jbuilder (~> 2.0)

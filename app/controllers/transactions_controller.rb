@@ -6,11 +6,11 @@ class TransactionsController < ApplicationController
   # GET /transactions.json
   def index
     if current_user
-      @transactions = Transaction.where(:user_id => current_user.id)
+      @transactions = Transaction.where(:user_id => current_user.id).includes(:user)
     else
-      redirect_to Metacard, notice: 'log in to create and view your transactions'
+      redirect_to root, notice: 'log in to create and view your transactions'
     end
-    #@transactions = Transaction.new(transaction_params)
+
   end
 
   # GET /transactions/1
